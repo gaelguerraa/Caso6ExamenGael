@@ -150,7 +150,7 @@ public class Vista extends javax.swing.JFrame implements Observador {
     }
 
     
-    private void crearPanelTarjeta(){
+    public void crearPanelTarjeta(){
         if(panelTarjeta == null){
             panelTarjeta = new PanelTarjeta();
             panelTarjeta.setBounds(380, 310, 380, 110);
@@ -158,7 +158,7 @@ public class Vista extends javax.swing.JFrame implements Observador {
         }
     }
     
-    private void crearPanelTicket(){
+    public void crearPanelTicket(){
         if(panelTicket == null){
             panelTicket = new PanelTicket();
             panelTicket.setBounds(380, 280, 400, 180);
@@ -166,7 +166,7 @@ public class Vista extends javax.swing.JFrame implements Observador {
         }
     }
     
-     private void crearBotones() {
+     public void crearBotones() {
         // Botón Pagar
         botonPagar = new JButton("Pagar");
         botonPagar.setBounds(380, 450, 118, 18);
