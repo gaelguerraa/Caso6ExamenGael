@@ -108,6 +108,7 @@ public class Modelo extends Observable implements IModelo {
     @Override
     public CompraDTO procesarCompra(List<ProductoDTO> productosCarrito, String banco, String numero, String ciudad) {
         TarjetaDTO tarjeta = crearTarjeta(banco, numero, ciudad);
+        Tarjeta tarjetaEntidad = convertirTarjetaDTOAEntidad(tarjeta);
 
         float total = 0;
         for (ProductoDTO p : productosCarrito) {
@@ -119,8 +120,7 @@ public class Modelo extends Observable implements IModelo {
             productosEntidad.add(convertirProductoDTOAEntidad(dto)); 
         }
         
-        Tarjeta tarjetaEntidad = convertirTarjetaDTOAEntidad(tarjeta);
-        
+                
         Compra compra = new Compra(productosEntidad, tarjetaEntidad, LocalDate.now(), total);
 
         CompraDTO compraDTO = convertirCompraACompraDTO(compra);
