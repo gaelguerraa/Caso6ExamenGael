@@ -50,10 +50,5 @@ public class Tarjeta {
         return new Tarjeta(banco, numero, ciudad);
     }
 
-    @Override
-    public String toString() {
-        return "Tarjeta{" + "banco=" + banco + ", numero=" + numero + ", ciudad=" + ciudad + '}';
-    }
-    
     
 }

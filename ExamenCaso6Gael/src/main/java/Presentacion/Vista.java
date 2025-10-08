@@ -68,11 +68,6 @@ public class Vista extends javax.swing.JFrame implements Observador {
         }
     }
     
-    public void seleccionarProducto(){
-        tablaProductos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    }
-
-    
    public void añadirProductoACarrito() {
         int filaSeleccionada = tablaProductos.getSelectedRow();
 

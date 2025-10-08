@@ -51,7 +51,6 @@ public class Modelo extends Observable implements IModelo {
     
     
     
-    @Override
     public ProductoDTO convertirProductoADTO(Producto producto) {
         ProductoDTO dto = new ProductoDTO();
         dto.setNombre(producto.getNombre());
@@ -59,7 +58,6 @@ public class Modelo extends Observable implements IModelo {
         return dto;
     }
     
-    @Override
     public Producto convertirProductoDTOAEntidad(ProductoDTO dto){
         Producto producto = new Producto();
         producto.setNombre(dto.getNombre());
@@ -77,7 +75,6 @@ public class Modelo extends Observable implements IModelo {
         return dto;
     }
     
-    @Override
     public Tarjeta convertirTarjetaDTOAEntidad(TarjetaDTO dto) {
         Tarjeta tarjeta = new Tarjeta();
         tarjeta.setBanco(dto.getBanco());
@@ -86,7 +83,6 @@ public class Modelo extends Observable implements IModelo {
         return tarjeta;
     }
     
-    @Override
     public CompraDTO convertirCompraACompraDTO(Compra compra) {
         List<ProductoDTO> productosDTO = new ArrayList<>();
         for (Producto producto : compra.getProductos()) {
