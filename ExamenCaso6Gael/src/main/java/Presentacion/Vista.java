@@ -77,10 +77,7 @@ public class Vista extends javax.swing.JFrame implements Observador {
         int filaSeleccionada = tablaProductos.getSelectedRow();
 
         if (filaSeleccionada >= 0) {
-            // Obtener el nombre del producto seleccionado
             String nombre = tablaProductos.getValueAt(filaSeleccionada, 0).toString(); 
-
-            // Pedir al controlador el ProductoDTO correspondiente
             ProductoDTO productoSeleccionado = controlador.buscarProductoPorNombre(nombre); 
 
             if (productoSeleccionado != null) { 
@@ -145,7 +142,7 @@ public class Vista extends javax.swing.JFrame implements Observador {
 
         // Llenar la tabla con los productos comprados
         DefaultTableModel modelo = (DefaultTableModel) panelTicket.tablaProductosComprados.getModel();
-        modelo.setRowCount(0); // limpiar filas previas
+        modelo.setRowCount(0); 
 
         if (compra.getProductos() != null && !compra.getProductos().isEmpty()) {
             for (ProductoDTO producto : compra.getProductos()) {
@@ -177,7 +174,7 @@ public class Vista extends javax.swing.JFrame implements Observador {
      private void crearBotones() {
         // Botón Pagar
         botonPagar = new JButton("Pagar");
-        botonPagar.setBounds(380, 450, 118, 18); // posición que pediste
+        botonPagar.setBounds(380, 450, 118, 18);
         PanelFondo.add(botonPagar);
         
         botonPagar.addActionListener(e -> {
@@ -185,7 +182,7 @@ public class Vista extends javax.swing.JFrame implements Observador {
             JOptionPane.showMessageDialog(this, "Revisa los datos de la tarjeta. Todo debe ser correcto.");
             return;
         }
-        // 1. Obtener productos del carrito
+
         List<ProductoDTO> productosCarrito = obtenerProductosDTODeTablaCarrito();
         
         if(productosCarrito.isEmpty()){
@@ -193,25 +190,20 @@ public class Vista extends javax.swing.JFrame implements Observador {
             return;
         }
 
-        // 2. Obtener los datos de la tarjeta desde el panel
         String banco = panelTarjeta.getBanco();
         String numero = panelTarjeta.getNumeroTarjeta();
         String ciudad = panelTarjeta.getCiudad();
 
-        // 3. Procesar la compra a través del controlador
         CompraDTO compra = controlador.procesarCompra(productosCarrito, banco, numero, ciudad);
 
     });
 
-        // Botón Regresar
         botonRegresar = new JButton("Regresar");
-        botonRegresar.setBounds(380, 450, 118, 18); // misma posición para reemplazo visual
+        botonRegresar.setBounds(380, 450, 118, 18); 
         PanelFondo.add(botonRegresar);
         botonRegresar.addActionListener(e -> {
-        // 1. Limpiar carrito
-        borrarRegistros();
 
-        // 2. Volver al estado inicial de la vista
+        borrarRegistros();
         mostrarIngresoTarjeta();
     });
 

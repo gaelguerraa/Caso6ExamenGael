@@ -11,7 +11,7 @@ package DTO;
 public class ProductoDTO {
     private String nombre;
     private float precio;
-    private int cantidad;
+
 
     public ProductoDTO() {
     }
@@ -21,16 +21,8 @@ public class ProductoDTO {
         this.nombre = nombre;
         this.precio = precio;
     }
-
-    public ProductoDTO(String nombre, float precio, int cantidad) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = cantidad;
-    }
-    
-    
-
-    public String getNombre() {
+     
+   public String getNombre() {
         return nombre;
     }
 
@@ -45,14 +37,5 @@ public class ProductoDTO {
     public void setPrecio(float precio) {
         this.precio = precio;
     }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-    
     
 }

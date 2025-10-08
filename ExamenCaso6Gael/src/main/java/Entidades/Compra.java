@@ -17,6 +17,11 @@ public class Compra {
     private LocalDate fechaCompra;
     private float total;
 
+    public Compra() {
+    }
+    
+    
+
     public Compra(List<Producto> productos, Tarjeta tarjeta, LocalDate fechaCompra, float total) {
         this.productos = productos;
         this.tarjeta = tarjeta;
@@ -56,23 +61,6 @@ public class Compra {
         this.total = total;
     }
     
-    private static float calcularTotal(List<Producto> productos) {
-        return (float) productos.stream()
-                .mapToDouble(Producto::getPrecio)
-                .sum();
-    }
-    
-    public static Compra crearCompra(List<Producto> productos, Tarjeta tarjeta) {
-        float total = calcularTotal(productos);
-        LocalDate fechaCompra = LocalDate.now();
-
-        return new Compra(productos, tarjeta, fechaCompra, total);
-    }
-    
-    @Override
-    public String toString() {
-        return String.format("Compra{fecha=%s, total=%.2f, productos=%d}", 
-            fechaCompra, total, productos.size());
-    }
+ 
 
 }

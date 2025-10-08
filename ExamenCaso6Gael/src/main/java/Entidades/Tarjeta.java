@@ -13,7 +13,10 @@ public class Tarjeta {
     private String numero;
     private String ciudad;
 
-    public Tarjeta(String banco, String numero, String ciudad) {
+    public Tarjeta() {
+    }
+    
+        public Tarjeta(String banco, String numero, String ciudad) {
         this.banco = banco;
         this.numero = numero;
         this.ciudad = ciudad;

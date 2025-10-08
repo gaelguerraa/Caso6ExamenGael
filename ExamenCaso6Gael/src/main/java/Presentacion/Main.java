@@ -19,8 +19,7 @@ public class Main {
         
         modelo.agregarObservador(vista);
         vista.setVisible(true);
-
-        System.out.println("como estn");        
+      
     }
     
 }
